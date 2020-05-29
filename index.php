@@ -3,11 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Denuncias Web App Transporte</title>
+        <title>Denuncias Web De Transito</title>
         <style>
             html
             {
                 height: 100%;
+                background: gray;
             }
             body
             {
@@ -16,8 +17,8 @@
             .seccion
             {
                 height: 70%;
-                background-color:#fdf1f1;
-                border: whitesmoke solid 2px;
+                background-color:gray;
+                border: whitesmoke solid 2px gray;
             }
             .header
             {
@@ -32,11 +33,11 @@
     <body>
         <div class="header">
             <h1>Denuncias Web App</h1>
-            <p>Aplicación web para el registro de denuncias del transporte publico en Colombia</p>
+            <p>Aplicacion que nos permite realizar una denuncia sobre alguna infracción de transito de cualquier ciudadano.</p>
             <p>Permite el control y la veduría pública</p>
         </div>
         <div class="seccion">
-            <h3>Registre aquí sus denuncias</h3>
+            <h3>Registre aquí las denuncias que desea realizar</h3>
             <form action="crearDenuncia.php" method="POST">
                 <div class="item-form">
                     <label for="">Lugar:</label>
@@ -48,7 +49,7 @@
                 </div>
                 <div class="item-form">
                     <label for="">Hora:</label>
-                    <input type="number" name="input_hora" id="" required>
+                    <input type="time" name="input_hora" id="" required>
                 </div>
                 <div class="item-form">
                     <label for="">Tipo de Vehículo:</label>
@@ -109,7 +110,7 @@
                     <td> <?php echo $row['tipo']; ?></td>
                     <td> <?php echo $row['placa']; ?></td>
                     <td> <?php echo $row['denuncia']; ?></td>
-                    <td><a href="editarDenuncia.php?id_para_editar=<?php echo $row['id_pk']; ?>">Editar</a></td>
+                    <td><a href="verDenuncia.php?id_para_editar=<?php echo $row['id_pk']; ?>">Editar</a></td>
                     <td><a href="eliminarDenuncia.php?id_para_borrar=<?php echo $row['id_pk']; ?>">eliminar</a></td>
                 </tr>
                 <?php
