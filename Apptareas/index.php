@@ -2,22 +2,24 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Registro Tareas</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <style>
             html
             {
                 height: 100%;
-                background: gray;
+            
             }
             body
             {
                 height: 100%;
+                background-color: gray;
             }
             .seccion
             {
                 height: 70%;
-                background-color:gray;
+              
                 border: whitesmoke solid 2px gray;
             }
             .header
@@ -30,15 +32,14 @@
               border-radius: 3px;
               font-size: 0.8em;
               margin: 0 auto;
-              width: 300px;
-              padding: 10px;
-              height: 300px;
+              padding: 30px;
               color: #999;
+              padding-right: 50px;
             }
             input, textarea{
 			      border: 0;
 			      outline: none;
-            width: 280px;
+            width: 100%;
 	        	}
 
 		        .form-control{
@@ -54,11 +55,12 @@
 		    	text-align: center;
 	        	}
             .tabla{
-              color: black;
               background-color: white;
+              color: black;
               text-align: left;
               border-collapse: collapse;
               width: 100%;
+              margin-left: 80px;
             }
 
             th, td{
@@ -116,8 +118,8 @@
       <input type="date" class="form-control" id="inputF" name="venciTa">
     </div>
   </div>
-    <div class="form-group row">
-      <label>Prioridad de la tarea</label>
+    <div class="form-group cold-md-4">
+      <label for="inputState">Prioridad de la tarea</label>
       <br>
       <select name="prioridad" class="form-control">
         <option>Alta</option>
@@ -140,7 +142,7 @@
 <br>
 <br>
 <br>
-            <table border="2" class="tabla" >
+            <table border="2" class="tabla">
               <thead>
                 <tr>
                     <th>Id</th>
@@ -193,5 +195,8 @@
             </table>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     </body>
 </html>
