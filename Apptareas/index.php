@@ -77,6 +77,10 @@
               background-color: #369681;
               color: white;
             }
+            .contenedor{
+              display: flex;
+              flex-wrap: nowrap;
+            }
         </style>
     </head>
     <body>
@@ -89,6 +93,9 @@
         <div class="seccion">
             <h3>Registre aquí las tareas que tiene pendientes para realizar con su fecha de entrega</h3>
             </center>
+            <br>
+            <br>
+            <div class="contenedor">
       <div class="formu">
     <form action="crearTarea.php" method="POST" >
   <div class="form-group row">
@@ -108,10 +115,11 @@
     <div class="col-sm-10">
       <input type="date" class="form-control" id="inputF" name="venciTa">
     </div>
+  </div>
     <div class="form-group row">
-      <label for="inputState">Prioridad de la tarea</label>
+      <label>Prioridad de la tarea</label>
       <br>
-      <select id="inputState" class="form-control" name="prioridad" type="text">
+      <select name="prioridad" class="form-control">
         <option>Alta</option>
         <option>Media</option>
         <option>Baja</option>
@@ -122,6 +130,7 @@
     <div class="col-sm-10">
       <input type="text" class="form-control" id="inputR" name="responTa">
     </div>
+  </div>
     <br>
     <div class="item-form">
     <input type="submit" value="Guardar Tarea">
@@ -131,7 +140,6 @@
 <br>
 <br>
 <br>
-<div class="table">
             <table border="2" class="tabla" >
               <thead>
                 <tr>
@@ -159,10 +167,9 @@
                 }
                 else
                 {
-                    echo "conexión establecida entre php y mysql</br>";
                 }
                 //crear sentencia sql
-                $sql = "SELECT * from tareas";
+                $sql = "SELECT * from tareas ORDER BY fecha DESC";
                 //lanzar la sentencia sql
                 $respuesta = $conn->query($sql);
                 while($row=$respuesta->fetch_array())

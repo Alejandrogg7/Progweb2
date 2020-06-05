@@ -51,9 +51,63 @@
     <input value="<?php echo $hora; ?>" type="time" name="input_hora" id="" required>
 </div>
 <div class="item-form">
-    <label for="">Tipo de Vehículo:</label>
-    <input value="<?php echo $tipo; ?>" type="text" name="input_tipo" id="" required>
-</div>
+        <label for="">Tipo de Vehículo:</label>
+        <!-- <input value="<?php echo $tipo; ?>" type="text" name="input_tipo" id="" required> -->
+        <select value="<?php echo $tipo; ?>" name="cars" id="">
+        <?php
+        switch ($tipo) {
+            case 'Camión':
+                echo "
+                <option value='Camión' selected='selected'>Camión</option>
+                <option value='Carro particular'>Carro particular</option>
+                <option value='Volqueta'>Volqueta</option>
+                <option value='Motos'>Motos</option>
+                <option value='Transporte público'>Transporte público</option>";
+                break;
+            
+            case 'Carro particular':
+                echo "
+                <option value='Camión'>Camión</option>
+                <option value='Carro particular' selected='selected'>Carro particular</option>
+                <option value='Volqueta'>Volqueta</option>
+                <option value='Motos'>Motos</option>
+                <option value='Transporte público'>Transporte público</option>";
+                break;
+            
+            case 'Volqueta':
+                echo "
+                <option value='Camión'>Camión</option>
+                <option value='Carro particular'>Carro particular</option>
+                <option value='Volqueta' selected='selected'>Volqueta</option>
+                <option value='Motos'>Motos</option>
+                <option value='Transporte público'>Transporte público</option>";
+                break;
+
+            case 'Motos':
+                echo "
+                <option value='Camión'>Camión</option>
+                <option value='Carro particular'>Carro particular</option>
+                <option value='Volqueta'>Volqueta</option>
+                <option value='Motos' selected='selected'>Motos</option>
+                <option value='Transporte público'>Transporte público</option>";
+                break;
+
+            case 'Transporte público':
+                echo "
+                <option value='Camión'>Camión</option>
+                <option value='Carro particular'>Carro particular</option>
+                <option value='Volqueta'>Volqueta</option>
+                <option value='Motos'>Motos</option>
+                <option value='Transporte público' selected='selected'>Transporte público</option>";
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+         ?> 
+        </select>
+    </div>
 <div class="item-form">
     <label for="">Placa:</label>
     <input value="<?php echo $placa; ?>" type="text" name="input_placa" id="" required>

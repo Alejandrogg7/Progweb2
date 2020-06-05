@@ -53,7 +53,14 @@
                 </div>
                 <div class="item-form">
                     <label for="">Tipo de Vehículo:</label>
-                    <input type="text" name="input_tipo" id="" required>
+                    <!-- <input type="text" name="input_tipo" id="" required> -->
+                    <select name="cars" id="">
+                        <option value="Camión">Camión</option>
+                        <option value="Carro particular">Carro particular</option>
+                        <option value="Volqueta">Volqueta</option>
+                        <option value="Motos">Motos</option>
+                        <option value="Transporte público">Transporte público</option>
+                    </select>
                 </div>
                 <div class="item-form">
                     <label for="">Placa:</label>
@@ -80,21 +87,8 @@
                     <th></th>
                 </tr>
                 <?php
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname = "denuncias_bd";
-                
-                $conn = new mysqli($servername, $username, $password, $dbname);
-                if($conn->connect_error)
-                {
-                    echo "mi conexión con la bd falló";
-                    die("la conexión falló " . $conn->connect_error);
-                }
-                else
-                {
-                    echo "conexión establecida entre php y mysql</br>";
-                }
+
+                include_once('conexionbd.php');
                 //crear sentencia sql
                 $sql = "SELECT * from denuncias";
                 //lanzar la sentencia sql
