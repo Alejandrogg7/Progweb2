@@ -42,18 +42,6 @@
             width: 100%;
 	        	}
 
-		        .form-control{
-		      	border: solid 1px #ccc;
-		      	padding: 10px;
-	        	}
-
-		        .form-control:focus{
-		      	border-color: #18A383;
-	        	}
-
-		      .center-content{
-		    	text-align: center;
-	        	}
             .tabla{
               background-color: white;
               color: black;
@@ -99,44 +87,51 @@
             <br>
             <div class="contenedor">
       <div class="formu">
-    <form action="crearTarea.php" method="POST" >
-  <div class="form-group row">
-    <label for="input" class="col-sm-2 col-form-label">Nombre de la tarea</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputE" name="nombreTa">
+      <form action="crearTarea.php" method="POST" class="needs-validation" novalidate>
+  <div class="form-row">
+    <div class="col-md-10 mb-3">
+      <label for="validationTooltip01">Nombre de la tarea</label>
+      <input type="text" class="form-control" id="validationTooltip01" name="nombreTa" required>
+      <div class="valid-tooltip">
+        Registro correcto!
+      </div>
+    </div>
+    <div class="col-md-10 mb-3">
+      <label for="validationTooltip02">Descripción Tarea</label>
+      <input type="text" class="form-control" id="validationTooltip02" name="descripTa" required>
+      <div class="valid-tooltip">
+        Registro correcto!
+      </div>
     </div>
   </div>
-  <div class="form-group row">
-    <label for="input" class="col-sm-2 col-form-label">Descripciòn de la tarea</label>
-    <div class="col-sm-10">
-      <input type="textarea" class="form-control" id="inputP" name="descripTa">
+  <div class="form-row">
+    <div class="col-md-12 mb-3">
+      <label for="validationTooltip03">Fecha maxima de entrega</label>
+      <input type="date" class="form-control" id="validationTooltip03" name="venciTa" required>
+      <div class="invalid-tooltip">
+        Registre la información correctamente!
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="input" class="col-sm-2 col-form-label">Fecha de vencimiento para entregar la tarea</label>
-    <div class="col-sm-10">
-      <input type="date" class="form-control" id="inputF" name="venciTa">
-    </div>
-  </div>
-    <div class="form-group cold-md-4">
-      <label for="inputState">Prioridad de la tarea</label>
-      <br>
-      <select name="prioridad" class="form-control">
-        <option>Alta</option>
+    <div class="col-md-10 mb-3">
+      <label for="validationTooltip04">Prioridad de tarea</label>
+      <select class="custom-select" id="validationTooltip04" name="prioridad" required>
+        <option selected disabled value="">Alta</option>
         <option>Media</option>
         <option>Baja</option>
       </select>
+      <div class="invalid-tooltip">
+        Registre la información correctamente!
+      </div>
     </div>
-  <div class="form-group row">
-    <label for="input" class="col-sm-2 col-form-label">Persona responsable de la tarea</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputR" name="responTa">
+    <div class="col-md-10 mb-3">
+      <label for="validationTooltip05">Responsable tarea</label>
+      <input type="text" class="form-control" id="validationTooltip05" name="responTa" required>
+      <div class="invalid-tooltip">
+        Registre la información correctamente!
+      </div>
     </div>
   </div>
-    <br>
-    <div class="item-form">
-    <input type="submit" value="Guardar Tarea">
-    </div>   
+  <button class="btn btn-primary" type="submit">Guardar tarea</button>
 </form>
 </div>
 <br>
